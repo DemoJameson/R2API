@@ -93,11 +93,12 @@ namespace R2API.Benchmark {
                     }
                 },
 
-                {"Delegate get", () => TargetPerson.GetFieldValue<string>("name")},
-                {"Delegate set", () => TargetPerson.SetFieldValue("name", "John")},
+                {"R2API Delegate set", () => TargetPerson.SetFieldValue("name", "John")},
+                {"R2API Delegate get", () => TargetPerson.GetFieldValue<string>("name")},
 
-                {"Cached Delegate get", () => getDelegate(TargetPerson)},
-                {"Cached Delegate set", () => setDelegate(TargetPerson, "John")}, {
+                {"R2API Cached Delegate set", () => setDelegate(TargetPerson, "John")},
+                {"R2API Cached Delegate get", () => getDelegate(TargetPerson)},
+                {
                     "Reflection set", () => TargetType.GetField("name",
                         BindingFlags.NonPublic | BindingFlags.Instance).SetValue(TargetPerson, "John")
                 }, {
