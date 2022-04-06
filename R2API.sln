@@ -25,6 +25,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{
 		.github\workflows\release.yml = .github\workflows\release.yml
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "R2API.Benchmark", "R2API.Benchmark\R2API.Benchmark.csproj", "{B7D45773-AD8E-4787-9E37-B613CA631705}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{A10234E2-EEED-447D-857C-D68DBB561F3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A10234E2-EEED-447D-857C-D68DBB561F3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A10234E2-EEED-447D-857C-D68DBB561F3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7D45773-AD8E-4787-9E37-B613CA631705}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7D45773-AD8E-4787-9E37-B613CA631705}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7D45773-AD8E-4787-9E37-B613CA631705}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7D45773-AD8E-4787-9E37-B613CA631705}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

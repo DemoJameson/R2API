@@ -16,13 +16,13 @@ namespace R2API.Utils {
         private const BindingFlags AllFlags = BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static |
                                               BindingFlags.Instance | BindingFlags.DeclaredOnly;
 
-        private delegate T GetDelegate<out T>(object instance);
+        public delegate T GetDelegate<out T>(object instance);
 
-        private delegate void SetDelegate<in T>(object instance, T value);
+        public delegate void SetDelegate<in T>(object instance, T value);
 
         //private delegate object CallDelegate(object instance, object[] arguments);
 
-        private delegate void SetDelegateRef<TInstance, in TValue>(ref TInstance instance, TValue value) where TInstance : struct;
+        public delegate void SetDelegateRef<TInstance, in TValue>(ref TInstance instance, TValue value) where TInstance : struct;
 
         private delegate T GetDelegateRef<TInstance, out T>(ref TInstance instance) where TInstance : struct;
 
@@ -192,17 +192,15 @@ namespace R2API.Utils {
             return null;
         }
 
-        private static GetDelegate<TReturn> GetFieldGetDelegate<TReturn>(this FieldInfo field) =>
-            FieldGetDelegateCache.GetOrAdd(field, x => x.CreateGetDelegate<TReturn>())
-                .CastDelegate<GetDelegate<TReturn>>();
+        public static GetDelegate<TReturn> GetFieldGetDelegate<TReturn>(this FieldInfo field) =>
+            (GetDelegate<TReturn>)FieldGetDelegateCache.GetOrAdd(field, x => x.CreateGetDelegate<TReturn>());
 
-        private static SetDelegate<TValue> GetFieldSetDelegate<TValue>(this FieldInfo field) =>
-            FieldSetDelegateCache.GetOrAdd(field, x => x.CreateSetDelegate<TValue>())
-                .CastDelegate<SetDelegate<TValue>>();
+        public static SetDelegate<TValue> GetFieldSetDelegate<TValue>(this FieldInfo field) =>
+            (SetDelegate<TValue>)FieldSetDelegateCache.GetOrAdd(field, x => x.CreateSetDelegate<TValue>());
 
-        private static SetDelegateRef<TInstance, TValue> GetFieldSetDelegateRef<TInstance, TValue>(this FieldInfo field) where TInstance : struct =>
-            FieldSetDelegateCache.GetOrAdd(field, x => x.CreateSetDelegateRef<TInstance, TValue>())
-                .CastDelegate<SetDelegateRef<TInstance, TValue>>();
+        public static SetDelegateRef<TInstance, TValue> GetFieldSetDelegateRef<TInstance, TValue>(this FieldInfo field)
+            where TInstance : struct =>
+            (SetDelegateRef<TInstance, TValue>)FieldSetDelegateCache.GetOrAdd(field, x => x.CreateSetDelegateRef<TInstance, TValue>());
 
         #endregion Field
 
