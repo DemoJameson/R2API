@@ -74,6 +74,10 @@ namespace R2API.Benchmark {
                     () => {
                         fieldInfo = TargetType.GetField("name",
                             BindingFlags.NonPublic | BindingFlags.Instance);
+
+                        TargetPerson.SetFieldValue("name", "John");
+                        TargetPerson.GetFieldValue<string>("name");
+
                         getDelegate = fieldInfo.GetFieldGetDelegate<string>();
                         setDelegate = fieldInfo.GetFieldSetDelegate<string>();
                     }
