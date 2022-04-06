@@ -3,7 +3,6 @@ using MonoMod.Cil;
 using MonoMod.Utils;
 using System;
 using System.Collections;
-using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -22,54 +21,61 @@ namespace R2API.Utils {
 
         //private delegate object CallDelegate(object instance, object[] arguments);
 
-        public delegate void SetDelegateRef<TInstance, in TValue>(ref TInstance instance, TValue value) where TInstance : struct;
+        private delegate void SetDelegateRef<TInstance, in TValue>(ref TInstance instance, TValue value) where TInstance : struct;
 
         private delegate T GetDelegateRef<TInstance, out T>(ref TInstance instance) where TInstance : struct;
 
         #region Caches
 
         // Field
-        private static readonly ConcurrentDictionary<(Type T, string name), FieldInfo> FieldCache =
-            new ConcurrentDictionary<(Type T, string name), FieldInfo>();
+        private static readonly Dictionary<(Type T, string name), FieldInfo> FieldCache =
+            new Dictionary<(Type T, string name), FieldInfo>();
 
-        private static readonly ConcurrentDictionary<FieldInfo, Delegate> FieldGetDelegateCache =
-            new ConcurrentDictionary<FieldInfo, Delegate>();
+        private static readonly Dictionary<FieldInfo, Delegate> FieldGetDelegateCache =
+            new Dictionary<FieldInfo, Delegate>();
 
-        private static readonly ConcurrentDictionary<FieldInfo, Delegate> FieldSetDelegateCache =
-            new ConcurrentDictionary<FieldInfo, Delegate>();
+        private static readonly Dictionary<FieldInfo, Delegate> FieldSetDelegateCache =
+            new Dictionary<FieldInfo, Delegate>();
 
         // Property
-        private static readonly ConcurrentDictionary<(Type T, string name), PropertyInfo> PropertyCache =
-            new ConcurrentDictionary<(Type T, string name), PropertyInfo>();
+        private static readonly Dictionary<(Type T, string name), PropertyInfo> PropertyCache =
+            new Dictionary<(Type T, string name), PropertyInfo>();
 
-        private static readonly ConcurrentDictionary<PropertyInfo, Delegate> PropertyGetDelegateCache =
-            new ConcurrentDictionary<PropertyInfo, Delegate>();
+        private static readonly Dictionary<PropertyInfo, Delegate> PropertyGetDelegateCache =
+            new Dictionary<PropertyInfo, Delegate>();
 
-        private static readonly ConcurrentDictionary<PropertyInfo, Delegate> PropertySetDelegateCache =
-            new ConcurrentDictionary<PropertyInfo, Delegate>();
+        private static readonly Dictionary<PropertyInfo, Delegate> PropertySetDelegateCache =
+            new Dictionary<PropertyInfo, Delegate>();
 
         // Method
-        private static readonly ConcurrentDictionary<(Type T, string name), MethodInfo> MethodCache =
-            new ConcurrentDictionary<(Type T, string name), MethodInfo>();
+        private static readonly Dictionary<(Type T, string name), MethodInfo> MethodCache =
+            new Dictionary<(Type T, string name), MethodInfo>();
 
-        private static readonly ConcurrentDictionary<(Type T, string name, Type[] argumentTypes), MethodInfo>
+        private static readonly Dictionary<(Type T, string name, Type[] argumentTypes), MethodInfo>
             OverloadedMethodCache =
-                new ConcurrentDictionary<(Type T, string name, Type[] argumentTypes), MethodInfo>();
+                new Dictionary<(Type T, string name, Type[] argumentTypes), MethodInfo>();
 
-        private static readonly ConcurrentDictionary<MethodInfo, FastReflectionDelegate> DelegateCache =
-            new ConcurrentDictionary<MethodInfo, FastReflectionDelegate>();
+        private static readonly Dictionary<MethodInfo, FastReflectionDelegate> DelegateCache =
+            new Dictionary<MethodInfo, FastReflectionDelegate>();
 
         // Class
-        private static readonly ConcurrentDictionary<(Type T, Type[] argumentTypes), ConstructorInfo> ConstructorCache =
-            new ConcurrentDictionary<(Type T, Type[] argumentTypes), ConstructorInfo>();
+        private static readonly Dictionary<(Type T, Type[] argumentTypes), ConstructorInfo> ConstructorCache =
+            new Dictionary<(Type T, Type[] argumentTypes), ConstructorInfo>();
 
-        private static readonly ConcurrentDictionary<(Type T, string name), Type> NestedTypeCache =
-            new ConcurrentDictionary<(Type T, string name), Type>();
+        private static readonly Dictionary<(Type T, string name), Type> NestedTypeCache =
+            new Dictionary<(Type T, string name), Type>();
 
         // Helper methods
-        private static TValue GetOrAddOnNull<TKey, TValue>(this ConcurrentDictionary<TKey, TValue> dict, TKey key,
+        private static TValue GetOrAddOnNull<TKey, TValue>(this Dictionary<TKey, TValue> dict, TKey key,
             Func<TKey, TValue> factory) {
             if (dict.TryGetValue(key, out var val) && val != null)
+                return val;
+
+            return dict[key] = factory(key);
+        }
+
+        private static TValue GetOrAdd<TKey, TValue>(this Dictionary<TKey, TValue> dict, TKey key, Func<TKey, TValue> factory) {
+            if (dict.TryGetValue(key, out var val))
                 return val;
 
             return dict[key] = factory(key);
@@ -198,9 +204,9 @@ namespace R2API.Utils {
         public static SetDelegate<TValue> GetFieldSetDelegate<TValue>(this FieldInfo field) =>
             (SetDelegate<TValue>)FieldSetDelegateCache.GetOrAdd(field, x => x.CreateSetDelegate<TValue>());
 
-        public static SetDelegateRef<TInstance, TValue> GetFieldSetDelegateRef<TInstance, TValue>(this FieldInfo field)
-            where TInstance : struct =>
-            (SetDelegateRef<TInstance, TValue>)FieldSetDelegateCache.GetOrAdd(field, x => x.CreateSetDelegateRef<TInstance, TValue>());
+        private static SetDelegateRef<TInstance, TValue> GetFieldSetDelegateRef<TInstance, TValue>(this FieldInfo field) where TInstance : struct =>
+            FieldSetDelegateCache.GetOrAdd(field, x => x.CreateSetDelegateRef<TInstance, TValue>())
+                .CastDelegate<SetDelegateRef<TInstance, TValue>>();
 
         #endregion Field
 
