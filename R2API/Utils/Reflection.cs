@@ -100,9 +100,20 @@ namespace R2API.Utils {
         /// <param name="T">The type to search</param>
         /// <param name="name">The name of the field to find</param>
         /// <returns></returns>
-        public static FieldInfo GetFieldCached(this Type? T, string? name) =>
-            FieldCache.GetOrAddOnNull((T, name), x => x.T.GetFieldFull(x.name)
-                ?? throw new Exception($"Could not find {nameof(FieldInfo)} on {T.FullName} with the name {name}"));
+        public static FieldInfo GetFieldCached(this Type? T, string? name) {
+            return FieldCache.GetOrAddOnNull((T, name), x => x.T.GetFieldFull(x.name)
+                                                             ?? throw new Exception(
+                                                                 $"Could not find {nameof(FieldInfo)} on {T.FullName} with the name {name}"));
+        }
+
+        public static FieldInfo GetFieldCached2(this Type? T, string? name) {
+            if (!FieldCache.TryGetValue((T, name), out var result)) {
+                result = T.GetFieldFull(name);
+                FieldCache.Add((T, name), result);
+            }
+
+            return result;
+        }
 
         /// <summary>
         /// Gets the value of the field on the object
@@ -116,6 +127,13 @@ namespace R2API.Utils {
                 .GetFieldCached(fieldName)
                 .ThrowIfFieldTypeCannotBeAssignedTo<TReturn>()
                 .GetFieldGetDelegate<TReturn>()
+                (instance);
+
+        public static TReturn GetFieldValue2<TReturn>(this object? instance, string? fieldName) =>
+            instance.GetType()
+                .GetFieldCached2(fieldName)
+                .ThrowIfFieldTypeCannotBeAssignedTo<TReturn>()
+                .GetFieldGetDelegate2<TReturn>()
                 (instance);
 
         /// <summary>
@@ -145,6 +163,13 @@ namespace R2API.Utils {
                 .GetFieldCached(fieldName)
                 .ThrowIfTCannotBeAssignedToField<TValue>()
                 .GetFieldSetDelegate<TValue>()
+                (instance, value);
+
+        public static void SetFieldValue2<TValue>(this object? instance, string? fieldName, TValue value) =>
+            instance.GetType()
+                .GetFieldCached2(fieldName)
+                .ThrowIfTCannotBeAssignedToField<TValue>()
+                .GetFieldSetDelegate2<TValue>()
                 (instance, value);
 
         /// <summary>
@@ -201,8 +226,24 @@ namespace R2API.Utils {
         public static GetDelegate<TReturn> GetFieldGetDelegate<TReturn>(this FieldInfo field) =>
             (GetDelegate<TReturn>)FieldGetDelegateCache.GetOrAdd(field, x => x.CreateGetDelegate<TReturn>());
 
+        public static GetDelegate<TReturn> GetFieldGetDelegate2<TReturn>(this FieldInfo field) {
+            if (!FieldGetDelegateCache.TryGetValue(field, out var result)) {
+                result = field.CreateGetDelegate<TReturn>();
+                FieldGetDelegateCache[field] = result;
+            }
+            return (GetDelegate<TReturn>)result;
+        }
+
         public static SetDelegate<TValue> GetFieldSetDelegate<TValue>(this FieldInfo field) =>
             (SetDelegate<TValue>)FieldSetDelegateCache.GetOrAdd(field, x => x.CreateSetDelegate<TValue>());
+
+        public static SetDelegate<TValue> GetFieldSetDelegate2<TValue>(this FieldInfo field) {
+            if (!FieldSetDelegateCache.TryGetValue(field, out var result)) {
+                result = field.CreateSetDelegate<TValue>();
+                FieldSetDelegateCache[field] = result;
+            }
+            return (SetDelegate<TValue>)result;
+        }
 
         private static SetDelegateRef<TInstance, TValue> GetFieldSetDelegateRef<TInstance, TValue>(this FieldInfo field) where TInstance : struct =>
             FieldSetDelegateCache.GetOrAdd(field, x => x.CreateSetDelegateRef<TInstance, TValue>())

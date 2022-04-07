@@ -27,6 +27,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "R2API.Benchmark", "R2API.Benchmark\R2API.Benchmark.csproj", "{B7D45773-AD8E-4787-9E37-B613CA631705}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "R2API.BenchmarkDotNet", "R2API.BenchmarkDotNet\R2API.BenchmarkDotNet.csproj", "{D0B88EA2-0DEC-409B-8489-A054C98DB7FD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{B7D45773-AD8E-4787-9E37-B613CA631705}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7D45773-AD8E-4787-9E37-B613CA631705}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7D45773-AD8E-4787-9E37-B613CA631705}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0B88EA2-0DEC-409B-8489-A054C98DB7FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0B88EA2-0DEC-409B-8489-A054C98DB7FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0B88EA2-0DEC-409B-8489-A054C98DB7FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0B88EA2-0DEC-409B-8489-A054C98DB7FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

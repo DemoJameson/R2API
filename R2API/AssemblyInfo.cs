@@ -17,4 +17,3 @@ using System.Security.Permissions;
 //the attribute will call whatever method it's attached to once ror2 starts loading.
 //We can add dependencies to the SystemInitializer attribute, an example would be run
 //a piece of code that gets automatically ran once the ItemCatalog is initialized
-[assembly: HG.Reflection.SearchableAttribute.OptIn]
