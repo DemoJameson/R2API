@@ -3,6 +3,7 @@ using MonoMod.Cil;
 using MonoMod.Utils;
 using System;
 using System.Collections;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -36,6 +37,9 @@ namespace R2API.Utils {
 
         private static readonly Dictionary<FieldInfo, Delegate> FieldSetDelegateCache =
             new Dictionary<FieldInfo, Delegate>();
+
+        private static readonly Dictionary<(Type, string, Type), Delegate> FieldSetDelegateCache3 = new ();
+        private static readonly ConcurrentDictionary<(Type, string, Type), Delegate> FieldSetDelegateCache4 = new ();
 
         // Property
         private static readonly Dictionary<(Type T, string name), PropertyInfo> PropertyCache =
@@ -107,9 +111,10 @@ namespace R2API.Utils {
         }
 
         public static FieldInfo GetFieldCached2(this Type? T, string? name) {
-            if (!FieldCache.TryGetValue((T, name), out var result)) {
+            var valueTuple = (T, name);
+            if (!FieldCache.TryGetValue(valueTuple, out var result)) {
                 result = T.GetFieldFull(name);
-                FieldCache.Add((T, name), result);
+                FieldCache.Add(valueTuple, result);
             }
 
             return result;
@@ -171,6 +176,28 @@ namespace R2API.Utils {
                 .ThrowIfTCannotBeAssignedToField<TValue>()
                 .GetFieldSetDelegate2<TValue>()
                 (instance, value);
+
+        public static void SetFieldValue3<TValue>(this object? instance, string? fieldName, TValue value) {
+            var type = instance.GetType();
+            var key = (type, fieldName, typeof(TValue));
+            if (!FieldSetDelegateCache3.TryGetValue(key, out var result)) {
+                result = type.GetFieldCached2(fieldName).GetFieldSetDelegate2<TValue>();
+                FieldSetDelegateCache3[key] = result;
+            }
+
+            ((SetDelegate<TValue>)result)(instance, value);
+        }
+
+        public static void SetFieldValue4<TValue>(this object? instance, string? fieldName, TValue value) {
+            var type = instance.GetType();
+            var key = (type, fieldName, typeof(TValue));
+            if (!FieldSetDelegateCache4.TryGetValue(key, out var result)) {
+                result = type.GetFieldCached2(fieldName).GetFieldSetDelegate2<TValue>();
+                FieldSetDelegateCache4[key] = result;
+            }
+
+            ((SetDelegate<TValue>)result)(instance, value);
+        }
 
         /// <summary>
         /// Sets the value of the specified static field on the specified static type
