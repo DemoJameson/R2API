@@ -25,7 +25,8 @@ public class Person {
         var person = new Person();
         fieldInfo = typeof(Person).GetField("name", BindingFlags.Instance | BindingFlags.NonPublic);
         SetDelegate = fieldInfo.GetFieldSetDelegate<string>();
-        person.SetFieldValue("name", "John");
+        Reflection.SetFieldValue(person, "name", "John");
+        NewReflection.SetFieldValue(person, "name", "John");
         person.SetFieldValue2("name", "John");
         person.SetFieldValue3("name", "John");
         person.SetFieldValue4("name", "John");
@@ -39,18 +40,23 @@ public class Person {
     }
 
     [Benchmark]
-    public void ReflectionSet() {
+    public void GetFieldInfoThenSetValue() {
         typeof(Person).GetField("name", BindingFlags.Instance | BindingFlags.NonPublic).SetValue(this, "John");
     }
 
     [Benchmark(Baseline = true)]
-    public void ReflectionCachedSet() {
+    public void FieldInfoSetValue() {
         fieldInfo.SetValue(this, "John");
     }
 
     [Benchmark(Description = "R2API.SetFieldValue")]
     public void R2APISetFieldValue() {
-        this.SetFieldValue<string>("name", "John");
+        Reflection.SetFieldValue<string>(this, "name", "John");
+    }
+
+    [Benchmark(Description = "R2API.SetFieldValueAfterImprove")]
+    public void R2APISetFieldValueAfterImprove() {
+        NewReflection.SetFieldValue<string>(this, "name", "John");
     }
 
     [Benchmark(Description = "R2API.SetFieldValueWithoutGetOrAdd")]
@@ -58,14 +64,9 @@ public class Person {
         this.SetFieldValue2<string>("name", "John");
     }
 
-    [Benchmark(Description = "R2API.SetFieldValueWithoutGetFieldCached")]
-    public void R2APISetFieldValueWithoutGetFieldCached() {
+    [Benchmark(Description = "R2API.SetFieldValueSkipGetFieldCached")]
+    public void R2APISetFieldValueSkipGetFieldCached() {
         this.SetFieldValue3<string>("name", "John");
-    }
-
-    [Benchmark(Description = "R2API.SetFieldValueWithoutGetFieldCachedButConcurrent")]
-    public void R2APISetFieldValueWithoutGetFieldCachedButConcurrent() {
-        this.SetFieldValue4<string>("name", "John");
     }
 
     [Benchmark(Description = "R2API.CachedSetDelegate")]
