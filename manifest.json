@@ -1414,6 +1414,46 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/R2API.Skills.Interop.GenericSkillInterop.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/R2API.Skills.Interop.GenericSkillInterop.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/R2API.Skills.Interop.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/R2API.Skills.Interop.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/R2API.SkillsAPI.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/R2API.SkillsAPI.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/R2API.SkillsPlugin.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/R2API.SkillsPlugin.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/R2API.SkinDefInfo.yml",
       "output": {
         ".html": {
@@ -2054,6 +2094,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/RoR2.GenericSkill.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/RoR2.GenericSkill.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/RoR2.ProcChainMask.yml",
       "output": {
         ".html": {
@@ -2086,11 +2136,11 @@
       "type": "Toc",
       "source_relative_path": "api/toc.yml",
       "output": {
-        ".json": {
-          "relative_path": "api/toc.json"
-        },
         ".html": {
           "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
         }
       },
       "version": ""
@@ -2109,11 +2159,11 @@
       "type": "Toc",
       "source_relative_path": "toc.yml",
       "output": {
-        ".json": {
-          "relative_path": "toc.json"
-        },
         ".html": {
           "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
         }
       },
       "version": ""
