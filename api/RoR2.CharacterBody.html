@@ -5,11 +5,11 @@
   <head>
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Delegate RecalculateStatsAPI.StatHookEventHandler </title>
+      <title>Class CharacterBody </title>
       <meta name="viewport" content="width=device-width">
-      <meta name="title" content="Delegate RecalculateStatsAPI.StatHookEventHandler ">
+      <meta name="title" content="Class CharacterBody ">
     
-    <meta name="description" content="Used as the delegate type for the GetStatCoefficients event.">
+    
       <link rel="shortcut icon" href="../favicon.ico">
       <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../styles/docfx.css">
@@ -66,41 +66,76 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="R2API.RecalculateStatsAPI.StatHookEventHandler">
+            <article class="content wrap" id="_content" data-uid="RoR2.CharacterBody">
 
 
 
-  <h1 id="R2API_RecalculateStatsAPI_StatHookEventHandler" data-uid="R2API.RecalculateStatsAPI.StatHookEventHandler" class="text-break">Delegate RecalculateStatsAPI.StatHookEventHandler</h1>
-  <div class="markdown level0 summary"><p>Used as the delegate type for the GetStatCoefficients event.</p>
-</div>
+  <h1 id="RoR2_CharacterBody" data-uid="RoR2.CharacterBody" class="text-break">Class CharacterBody</h1>
+  <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="R2API.html">R2API</a></h6>
-  <h6><strong>Assembly</strong>: R2API.RecalculateStats.dll</h6>
-  <h5 id="R2API_RecalculateStatsAPI_StatHookEventHandler_syntax">Syntax</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public delegate void RecalculateStatsAPI.StatHookEventHandler(CharacterBody sender, RecalculateStatsAPI.StatHookEventArgs args)</code></pre>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><span class="xref">CharacterBody</span></div>
   </div>
-  <h5 class="parameters">Parameters</h5>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="RoR2.html">RoR2</a></h6>
+  <h6><strong>Assembly</strong>: RoR2.dll</h6>
+  <h5 id="RoR2_CharacterBody_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class CharacterBody</code></pre>
+  </div>
+  <h3 id="fields">Fields
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/DemoJameson/R2API/new/master/apiSpec/new?filename=RoR2_CharacterBody_r2api_moddedBodyFlags.md&amp;value=---%0Auid%3A%20RoR2.CharacterBody.r2api_moddedBodyFlags%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/DemoJameson/R2API/blob/master/RoR2.Patched/CharacterBody.cs/#L8">View Source</a>
+  </span>
+  <h4 id="RoR2_CharacterBody_r2api_moddedBodyFlags" data-uid="RoR2.CharacterBody.r2api_moddedBodyFlags">r2api_moddedBodyFlags</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte[] r2api_moddedBodyFlags</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
-        <th>Name</th>
         <th>Description</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="RoR2.CharacterBody.html">CharacterBody</a></td>
-        <td><span class="parametername">sender</span></td>
-        <td><p>The CharacterBody which RecalculateStats is being called for.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="R2API.RecalculateStatsAPI.html">RecalculateStatsAPI</a>.<a class="xref" href="R2API.RecalculateStatsAPI.StatHookEventArgs.html">StatHookEventArgs</a></td>
-        <td><span class="parametername">args</span></td>
-        <td><p>An instance of StatHookEventArgs, passed to each subscriber to this event in turn for modification.</p>
-</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -144,10 +179,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/DemoJameson/R2API/new/master/apiSpec/new?filename=R2API_RecalculateStatsAPI_StatHookEventHandler.md&amp;value=---%0Auid%3A%20R2API.RecalculateStatsAPI.StatHookEventHandler%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                    <a href="https://github.com/DemoJameson/R2API/new/master/apiSpec/new?filename=RoR2_CharacterBody.md&amp;value=---%0Auid%3A%20RoR2.CharacterBody%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
                   </li>
                   <li>
-                    <a href="https://github.com/DemoJameson/R2API/blob/master/R2API.RecalculateStats/RecalculateStatsAPI.cs/#L249" class="contribution-link">View Source</a>
+                    <a href="https://github.com/DemoJameson/R2API/blob/master/RoR2.Patched/CharacterBody.cs/#L6" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
