@@ -5,11 +5,11 @@
   <head>
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Class DirectorAPI.StageSettings </title>
+      <title>Class HealthBarAPI.BarOverlayInfo </title>
       <meta name="viewport" content="width=device-width">
-      <meta name="title" content="Class DirectorAPI.StageSettings ">
+      <meta name="title" content="Class HealthBarAPI.BarOverlayInfo ">
     
-    <meta name="description" content="A class passed to everything subscribed to  that contains various settings for a stage. All mods will be working off the same settings, so operators like *=, +=, -=, and /= are preferred over directly setting values.">
+    <meta name="description" content="Defines on a modded HealthBar overlay.">
       <link rel="shortcut icon" href="../favicon.ico">
       <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../styles/docfx.css">
@@ -66,19 +66,18 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="R2API.DirectorAPI.StageSettings">
+            <article class="content wrap" id="_content" data-uid="R2API.HealthBarAPI.BarOverlayInfo">
 
 
 
-  <h1 id="R2API_DirectorAPI_StageSettings" data-uid="R2API.DirectorAPI.StageSettings" class="text-break">Class DirectorAPI.StageSettings</h1>
-  <div class="markdown level0 summary"><p>A class passed to everything subscribed to <a class="xref" href="R2API.DirectorAPI.html#R2API_DirectorAPI_StageSettingsActions">StageSettingsActions</a> that contains various settings for a stage.
-All mods will be working off the same settings, so operators like *=, +=, -=, and /= are preferred over directly setting values.</p>
+  <h1 id="R2API_HealthBarAPI_BarOverlayInfo" data-uid="R2API.HealthBarAPI.BarOverlayInfo" class="text-break">Class HealthBarAPI.BarOverlayInfo</h1>
+  <div class="markdown level0 summary"><p>Defines on a modded HealthBar overlay.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-    <div class="level1"><span class="xref">DirectorAPI.StageSettings</span></div>
+    <div class="level1"><span class="xref">HealthBarAPI.BarOverlayInfo</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -105,28 +104,27 @@ All mods will be working off the same settings, so operators like *=, +=, -=, an
     </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="R2API.html">R2API</a></h6>
-  <h6><strong>Assembly</strong>: R2API.Director.dll</h6>
-  <h5 id="R2API_DirectorAPI_StageSettings_syntax">Syntax</h5>
+  <h6><strong>Assembly</strong>: R2API.CharacterBody.dll</h6>
+  <h5 id="R2API_HealthBarAPI_BarOverlayInfo_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class DirectorAPI.StageSettings</code></pre>
+    <pre><code class="lang-csharp hljs">public class HealthBarAPI.BarOverlayInfo</code></pre>
   </div>
   <h3 id="fields">Fields
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/DemoJameson/R2API/new/master/apiSpec/new?filename=R2API_DirectorAPI_StageSettings_BonusCreditObjects.md&amp;value=---%0Auid%3A%20R2API.DirectorAPI.StageSettings.BonusCreditObjects%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/DemoJameson/R2API/new/master/apiSpec/new?filename=R2API_HealthBarAPI_BarOverlayInfo_BarInfo.md&amp;value=---%0Auid%3A%20R2API.HealthBarAPI.BarOverlayInfo.BarInfo%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DemoJameson/R2API/blob/master/R2API.Director/DirectorAPIexternal.cs/#L749">View Source</a>
+    <a href="https://github.com/DemoJameson/R2API/blob/master/R2API.CharacterBody/HealthBarAPI.cs/#L293">View Source</a>
   </span>
-  <h4 id="R2API_DirectorAPI_StageSettings_BonusCreditObjects" data-uid="R2API.DirectorAPI.StageSettings.BonusCreditObjects">BonusCreditObjects</h4>
-  <div class="markdown level1 summary"><p>If the GameObject key of the dictionary is enabled, then the scene director gains the value in extra interactable credits.
-Used for things like the door in Abyssal Depths.</p>
+  <h4 id="R2API_HealthBarAPI_BarOverlayInfo_BarInfo" data-uid="R2API.HealthBarAPI.BarOverlayInfo.BarInfo">BarInfo</h4>
+  <div class="markdown level1 summary"><p>A template BarInfo that will be applied to the HealthBar if assigned.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Dictionary&lt;GameObject, int&gt;? BonusCreditObjects</code></pre>
+    <pre><code class="lang-csharp hljs">public HealthBar.BarInfo BarInfo</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-condensed">
@@ -138,25 +136,25 @@ Used for things like the door in Abyssal Depths.</p>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<span class="xref">GameObject</span>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</td>
+        <td><span class="xref">HealthBar</span>.<span class="xref">BarInfo</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/DemoJameson/R2API/new/master/apiSpec/new?filename=R2API_DirectorAPI_StageSettings_InteractableCategoryWeightsPerDccs.md&amp;value=---%0Auid%3A%20R2API.DirectorAPI.StageSettings.InteractableCategoryWeightsPerDccs%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/DemoJameson/R2API/new/master/apiSpec/new?filename=R2API_HealthBarAPI_BarOverlayInfo_BodySpecific.md&amp;value=---%0Auid%3A%20R2API.HealthBarAPI.BarOverlayInfo.BodySpecific%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DemoJameson/R2API/blob/master/R2API.Director/DirectorAPIexternal.cs/#L759">View Source</a>
+    <a href="https://github.com/DemoJameson/R2API/blob/master/R2API.CharacterBody/HealthBarAPI.cs/#L295">View Source</a>
   </span>
-  <h4 id="R2API_DirectorAPI_StageSettings_InteractableCategoryWeightsPerDccs" data-uid="R2API.DirectorAPI.StageSettings.InteractableCategoryWeightsPerDccs">InteractableCategoryWeightsPerDccs</h4>
-  <div class="markdown level1 summary"><p>The weights for each interactable category per possible DCCS on this stage.</p>
+  <h4 id="R2API_HealthBarAPI_BarOverlayInfo_BodySpecific" data-uid="R2API.HealthBarAPI.BarOverlayInfo.BodySpecific">BodySpecific</h4>
+  <div class="markdown level1 summary"><p>Causes your bar to only be handled on bodies it is assigned to, via AddOverlayToCharacterBody.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Dictionary&lt;DirectorCardCategorySelection, Dictionary&lt;string, float&gt;&gt; InteractableCategoryWeightsPerDccs</code></pre>
+    <pre><code class="lang-csharp hljs">public bool BodySpecific</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-condensed">
@@ -168,25 +166,25 @@ Used for things like the door in Abyssal Depths.</p>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<span class="xref">DirectorCardCategorySelection</span>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/DemoJameson/R2API/new/master/apiSpec/new?filename=R2API_DirectorAPI_StageSettings_MonsterCategoryWeightsPerDccs.md&amp;value=---%0Auid%3A%20R2API.DirectorAPI.StageSettings.MonsterCategoryWeightsPerDccs%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/DemoJameson/R2API/new/master/apiSpec/new?filename=R2API_HealthBarAPI_BarOverlayInfo_ModifyBarInfo.md&amp;value=---%0Auid%3A%20R2API.HealthBarAPI.BarOverlayInfo.ModifyBarInfo%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DemoJameson/R2API/blob/master/R2API.Director/DirectorAPIexternal.cs/#L754">View Source</a>
+    <a href="https://github.com/DemoJameson/R2API/blob/master/R2API.CharacterBody/HealthBarAPI.cs/#L297">View Source</a>
   </span>
-  <h4 id="R2API_DirectorAPI_StageSettings_MonsterCategoryWeightsPerDccs" data-uid="R2API.DirectorAPI.StageSettings.MonsterCategoryWeightsPerDccs">MonsterCategoryWeightsPerDccs</h4>
-  <div class="markdown level1 summary"><p>The weights for each monster category per possible DCCS on this stage.</p>
+  <h4 id="R2API_HealthBarAPI_BarOverlayInfo_ModifyBarInfo" data-uid="R2API.HealthBarAPI.BarOverlayInfo.ModifyBarInfo">ModifyBarInfo</h4>
+  <div class="markdown level1 summary"><p>A delegate which will run when HealthBar overlays are updated. Use this to set things like whether your bar is enabled or its size.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Dictionary&lt;DirectorCardCategorySelection, Dictionary&lt;string, float&gt;&gt; MonsterCategoryWeightsPerDccs</code></pre>
+    <pre><code class="lang-csharp hljs">public HealthBarAPI.BarOverlayInfo.ModifyBarInfoCallback ModifyBarInfo</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-condensed">
@@ -198,25 +196,25 @@ Used for things like the door in Abyssal Depths.</p>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<span class="xref">DirectorCardCategorySelection</span>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;&gt;</td>
+        <td><a class="xref" href="R2API.HealthBarAPI.html">HealthBarAPI</a>.<a class="xref" href="R2API.HealthBarAPI.BarOverlayInfo.html">BarOverlayInfo</a>.<a class="xref" href="R2API.HealthBarAPI.BarOverlayInfo.ModifyBarInfoCallback.html">ModifyBarInfoCallback</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/DemoJameson/R2API/new/master/apiSpec/new?filename=R2API_DirectorAPI_StageSettings_SceneDirectorInteractableCredits.md&amp;value=---%0Auid%3A%20R2API.DirectorAPI.StageSettings.SceneDirectorInteractableCredits%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/DemoJameson/R2API/new/master/apiSpec/new?filename=R2API_HealthBarAPI_BarOverlayInfo_ModifyHealthValues.md&amp;value=---%0Auid%3A%20R2API.HealthBarAPI.BarOverlayInfo.ModifyHealthValues%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DemoJameson/R2API/blob/master/R2API.Director/DirectorAPIexternal.cs/#L743">View Source</a>
+    <a href="https://github.com/DemoJameson/R2API/blob/master/R2API.CharacterBody/HealthBarAPI.cs/#L299">View Source</a>
   </span>
-  <h4 id="R2API_DirectorAPI_StageSettings_SceneDirectorInteractableCredits" data-uid="R2API.DirectorAPI.StageSettings.SceneDirectorInteractableCredits">SceneDirectorInteractableCredits</h4>
-  <div class="markdown level1 summary"><p>How many credits the scene director has for interactables at the start of a stage.</p>
+  <h4 id="R2API_HealthBarAPI_BarOverlayInfo_ModifyHealthValues" data-uid="R2API.HealthBarAPI.BarOverlayInfo.ModifyHealthValues">ModifyHealthValues</h4>
+  <div class="markdown level1 summary"><p>A delegate that which will run when HealthBar display values are being calculated. Use this to modify the numerical health values before they render on the HUD.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int SceneDirectorInteractableCredits</code></pre>
+    <pre><code class="lang-csharp hljs">public HealthBarAPI.BarOverlayInfo.ModifyHealthValuesCallback ModifyHealthValues</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-condensed">
@@ -228,26 +226,25 @@ Used for things like the door in Abyssal Depths.</p>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><a class="xref" href="R2API.HealthBarAPI.html">HealthBarAPI</a>.<a class="xref" href="R2API.HealthBarAPI.BarOverlayInfo.html">BarOverlayInfo</a>.<a class="xref" href="R2API.HealthBarAPI.BarOverlayInfo.ModifyHealthValuesCallback.html">ModifyHealthValuesCallback</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/DemoJameson/R2API/new/master/apiSpec/new?filename=R2API_DirectorAPI_StageSettings_SceneDirectorMonsterCredits.md&amp;value=---%0Auid%3A%20R2API.DirectorAPI.StageSettings.SceneDirectorMonsterCredits%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/DemoJameson/R2API/new/master/apiSpec/new?filename=R2API_HealthBarAPI_BarOverlayInfo_OverlayIndex.md&amp;value=---%0Auid%3A%20R2API.HealthBarAPI.BarOverlayInfo.OverlayIndex%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/DemoJameson/R2API/blob/master/R2API.Director/DirectorAPIexternal.cs/#L738">View Source</a>
+    <a href="https://github.com/DemoJameson/R2API/blob/master/R2API.CharacterBody/HealthBarAPI.cs/#L310">View Source</a>
   </span>
-  <h4 id="R2API_DirectorAPI_StageSettings_SceneDirectorMonsterCredits" data-uid="R2API.DirectorAPI.StageSettings.SceneDirectorMonsterCredits">SceneDirectorMonsterCredits</h4>
-  <div class="markdown level1 summary"><p>How many credits the scene director has for monsters at the start of a stage.
-This scales with difficulty, and thus will always be zero on the first stage.</p>
+  <h4 id="R2API_HealthBarAPI_BarOverlayInfo_OverlayIndex" data-uid="R2API.HealthBarAPI.BarOverlayInfo.OverlayIndex">OverlayIndex</h4>
+  <div class="markdown level1 summary"><p>The identifier for this overlay type.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int SceneDirectorMonsterCredits</code></pre>
+    <pre><code class="lang-csharp hljs">public HealthBarAPI.BarOverlayIndex OverlayIndex</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-condensed">
@@ -259,7 +256,7 @@ This scales with difficulty, and thus will always be zero on the first stage.</p
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><a class="xref" href="R2API.HealthBarAPI.html">HealthBarAPI</a>.<a class="xref" href="R2API.HealthBarAPI.BarOverlayIndex.html">BarOverlayIndex</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -304,10 +301,10 @@ This scales with difficulty, and thus will always be zero on the first stage.</p
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/DemoJameson/R2API/new/master/apiSpec/new?filename=R2API_DirectorAPI_StageSettings.md&amp;value=---%0Auid%3A%20R2API.DirectorAPI.StageSettings%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                    <a href="https://github.com/DemoJameson/R2API/new/master/apiSpec/new?filename=R2API_HealthBarAPI_BarOverlayInfo.md&amp;value=---%0Auid%3A%20R2API.HealthBarAPI.BarOverlayInfo%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
                   </li>
                   <li>
-                    <a href="https://github.com/DemoJameson/R2API/blob/master/R2API.Director/DirectorAPIexternal.cs/#L731" class="contribution-link">View Source</a>
+                    <a href="https://github.com/DemoJameson/R2API/blob/master/R2API.CharacterBody/HealthBarAPI.cs/#L291" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

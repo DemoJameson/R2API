@@ -5,11 +5,11 @@
   <head>
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Delegate RecalculateStatsAPI.StatHookEventHandler </title>
+      <title>Delegate HealthBarAPI.BarOverlayInfo.ModifyHealthValuesCallback </title>
       <meta name="viewport" content="width=device-width">
-      <meta name="title" content="Delegate RecalculateStatsAPI.StatHookEventHandler ">
+      <meta name="title" content="Delegate HealthBarAPI.BarOverlayInfo.ModifyHealthValuesCallback ">
     
-    <meta name="description" content="Used as the delegate type for the GetStatCoefficients event.">
+    <meta name="description" content="A delegate that can be run when HealthBar display values are being calculated. Use this to modify the numerical health values before they render on the HUD.">
       <link rel="shortcut icon" href="../favicon.ico">
       <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../styles/docfx.css">
@@ -66,19 +66,19 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="R2API.RecalculateStatsAPI.StatHookEventHandler">
+            <article class="content wrap" id="_content" data-uid="R2API.HealthBarAPI.BarOverlayInfo.ModifyHealthValuesCallback">
 
 
 
-  <h1 id="R2API_RecalculateStatsAPI_StatHookEventHandler" data-uid="R2API.RecalculateStatsAPI.StatHookEventHandler" class="text-break">Delegate RecalculateStatsAPI.StatHookEventHandler</h1>
-  <div class="markdown level0 summary"><p>Used as the delegate type for the GetStatCoefficients event.</p>
+  <h1 id="R2API_HealthBarAPI_BarOverlayInfo_ModifyHealthValuesCallback" data-uid="R2API.HealthBarAPI.BarOverlayInfo.ModifyHealthValuesCallback" class="text-break">Delegate HealthBarAPI.BarOverlayInfo.ModifyHealthValuesCallback</h1>
+  <div class="markdown level0 summary"><p>A delegate that can be run when HealthBar display values are being calculated. Use this to modify the numerical health values before they render on the HUD.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <h6><strong>Namespace</strong>: <a class="xref" href="R2API.html">R2API</a></h6>
-  <h6><strong>Assembly</strong>: R2API.RecalculateStats.dll</h6>
-  <h5 id="R2API_RecalculateStatsAPI_StatHookEventHandler_syntax">Syntax</h5>
+  <h6><strong>Assembly</strong>: R2API.CharacterBody.dll</h6>
+  <h5 id="R2API_HealthBarAPI_BarOverlayInfo_ModifyHealthValuesCallback_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public delegate void RecalculateStatsAPI.StatHookEventHandler(CharacterBody sender, RecalculateStatsAPI.StatHookEventArgs args)</code></pre>
+    <pre><code class="lang-csharp hljs">public delegate void HealthBarAPI.BarOverlayInfo.ModifyHealthValuesCallback(HealthBar source, ref float currentHealth, ref float maxHealth)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -91,15 +91,21 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="RoR2.CharacterBody.html">CharacterBody</a></td>
-        <td><span class="parametername">sender</span></td>
-        <td><p>The CharacterBody which RecalculateStats is being called for.</p>
+        <td><span class="xref">HealthBar</span></td>
+        <td><span class="parametername">source</span></td>
+        <td><p>The HealthBar the display values are being modified on.</p>
 </td>
       </tr>
       <tr>
-        <td><a class="xref" href="R2API.RecalculateStatsAPI.html">RecalculateStatsAPI</a>.<a class="xref" href="R2API.RecalculateStatsAPI.StatHookEventArgs.html">StatHookEventArgs</a></td>
-        <td><span class="parametername">args</span></td>
-        <td><p>An instance of StatHookEventArgs, passed to each subscriber to this event in turn for modification.</p>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">currentHealth</span></td>
+        <td><p>A reference to the current health value that will be displayed on the healthbar. Modify this in-place.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">maxHealth</span></td>
+        <td><p>A reference to the current health value that will be displayed on the healthbar. Modify this in-place.</p>
 </td>
       </tr>
     </tbody>
@@ -144,10 +150,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/DemoJameson/R2API/new/master/apiSpec/new?filename=R2API_RecalculateStatsAPI_StatHookEventHandler.md&amp;value=---%0Auid%3A%20R2API.RecalculateStatsAPI.StatHookEventHandler%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                    <a href="https://github.com/DemoJameson/R2API/new/master/apiSpec/new?filename=R2API_HealthBarAPI_BarOverlayInfo_ModifyHealthValuesCallback.md&amp;value=---%0Auid%3A%20R2API.HealthBarAPI.BarOverlayInfo.ModifyHealthValuesCallback%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
                   </li>
                   <li>
-                    <a href="https://github.com/DemoJameson/R2API/blob/master/R2API.RecalculateStats/RecalculateStatsAPI.cs/#L465" class="contribution-link">View Source</a>
+                    <a href="https://github.com/DemoJameson/R2API/blob/master/R2API.CharacterBody/HealthBarAPI.cs/#L308" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
