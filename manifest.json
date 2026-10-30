@@ -514,6 +514,66 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/R2API.BuffsAPI.CustomSimpleSpriteAnimation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/R2API.BuffsAPI.CustomSimpleSpriteAnimation.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/R2API.BuffsAPI.CustomStackingDisplayMethod.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/R2API.BuffsAPI.CustomStackingDisplayMethod.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/R2API.BuffsAPI.ModdedBuffFlag.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/R2API.BuffsAPI.ModdedBuffFlag.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/R2API.BuffsAPI.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/R2API.BuffsAPI.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/R2API.BuffsPlugin.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/R2API.BuffsPlugin.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/R2API.CharacterBodyAPI.CanAlwaysSprint.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/R2API.CharacterBodyAPI.CanAlwaysSprint.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/R2API.CharacterBodyAPI.ModdedBodyFlag.yml",
       "output": {
         ".html": {
@@ -738,6 +798,16 @@
       "output": {
         ".html": {
           "relative_path": "api/R2API.DirectorAPI.DirectorCardHolder.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/R2API.DirectorAPI.GetCombatDirectorActivityCountDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/R2API.DirectorAPI.GetCombatDirectorActivityCountDelegate.html"
         }
       },
       "version": ""
@@ -1038,6 +1108,36 @@
       "output": {
         ".html": {
           "relative_path": "api/R2API.ExtendedRuleChoiceDef.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/R2API.FootstepAPI.Footstep.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/R2API.FootstepAPI.Footstep.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/R2API.FootstepAPI.FootstepReport.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/R2API.FootstepAPI.FootstepReport.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/R2API.FootstepAPI.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/R2API.FootstepAPI.html"
         }
       },
       "version": ""
@@ -1944,6 +2044,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/R2API.RunCombatDirectorsFixedUpdate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/R2API.RunCombatDirectorsFixedUpdate.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/R2API.SceneAssetAPI.yml",
       "output": {
         ".html": {
@@ -2348,6 +2458,126 @@
       "output": {
         ".html": {
           "relative_path": "api/R2API.SoundPlugin.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/R2API.SpawnCardCloning.BaseSpawnCardClone-1.CloningType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/R2API.SpawnCardCloning.BaseSpawnCardClone-1.CloningType.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/R2API.SpawnCardCloning.BaseSpawnCardClone-1.CustomCondition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/R2API.SpawnCardCloning.BaseSpawnCardClone-1.CustomCondition.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/R2API.SpawnCardCloning.BaseSpawnCardClone-1.OnSpawnCardCloneAdded.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/R2API.SpawnCardCloning.BaseSpawnCardClone-1.OnSpawnCardCloneAdded.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/R2API.SpawnCardCloning.BaseSpawnCardClone-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/R2API.SpawnCardCloning.BaseSpawnCardClone-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/R2API.SpawnCardCloning.CharacterSpawnCardClone.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/R2API.SpawnCardCloning.CharacterSpawnCardClone.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/R2API.SpawnCardCloning.GameObjectArrayComparer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/R2API.SpawnCardCloning.GameObjectArrayComparer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/R2API.SpawnCardCloning.GameObjectArrayDictionary-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/R2API.SpawnCardCloning.GameObjectArrayDictionary-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/R2API.SpawnCardCloning.InteractableSpawnCardClone.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/R2API.SpawnCardCloning.InteractableSpawnCardClone.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/R2API.SpawnCardCloning.RebuildCardsInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/R2API.SpawnCardCloning.RebuildCardsInfo.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/R2API.SpawnCardCloning.SpawnCardClone.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/R2API.SpawnCardCloning.SpawnCardClone.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/R2API.SpawnCardCloning.SpawnCardCloningAPI.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/R2API.SpawnCardCloning.SpawnCardCloningAPI.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/R2API.SpawnCardCloning.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/R2API.SpawnCardCloning.html"
         }
       },
       "version": ""
@@ -3136,11 +3366,11 @@
       "type": "Toc",
       "source_relative_path": "api/toc.yml",
       "output": {
-        ".html": {
-          "relative_path": "api/toc.html"
-        },
         ".json": {
           "relative_path": "api/toc.json"
+        },
+        ".html": {
+          "relative_path": "api/toc.html"
         }
       },
       "version": ""
@@ -3159,11 +3389,11 @@
       "type": "Toc",
       "source_relative_path": "toc.yml",
       "output": {
-        ".html": {
-          "relative_path": "toc.html"
-        },
         ".json": {
           "relative_path": "toc.json"
+        },
+        ".html": {
+          "relative_path": "toc.html"
         }
       },
       "version": ""
